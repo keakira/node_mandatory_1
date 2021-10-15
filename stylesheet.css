@@ -1,0 +1,158 @@
+
+/*************** Navbar *****************/
+
+.nav{
+    height:60px;
+    margin-bottom:130px;
+
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0px 10px 10px -10px rgba(21,20,20,0.25);
+}
+
+.navLink{
+    padding-top: 17px;
+    margin-left: 150px;
+    
+    color: #3d3b3b;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline;
+}
+
+.navLink:hover{
+    text-decoration: none;
+    color: #1f1e1e;
+}
+/*************** MainPage ***************/
+
+
+.basicInfoText{
+    margin-top: 50px !important;
+    margin-bottom: 50px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #3d3b3b;
+    text-align: center !important;
+}
+
+.tableElements{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center !important;
+}
+
+.tableElementLink{
+    font-size: 20px;
+    font-weight: bold;
+    color: #575353 !important;
+}
+
+.space{
+    margin-bottom: 100px;
+}
+
+/*************** General **************/
+
+.subjectHeaderText{
+    margin-top: 80px !important;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3d3b3b;
+    text-align: center !important;
+}
+
+.infoText{
+    font-size: 20px;
+    color: #3d3b3b;
+}
+
+.infoTextPlacement{
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+.cardHeader{
+    font-size: 20px;
+    font-weight: bold;
+    color: #3d3b3b;
+    margin-top: 20px;
+}
+
+.cardHeaderText{
+    font-weight: normal !important;
+}
+
+.card{
+    height: 500px;
+    z-index:50;
+    position: relative;
+    top: 10px;
+    padding-top: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0px 1px 21px -8px rgba(21,20,20,0.25);
+    background-color: rgba(254, 254, 254, 1.0)!important;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+}
+
+.cardText{
+    font-size: 18px;
+    color: #3d3b3b;
+}
+
+.cardCodePlacement{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 100px;
+}
+
+.cardTextPlacement{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 70px;
+}
+
+/*************** NPM&Package.json page ***************/
+.NPMInstallationCard{
+    height: 300px !important;
+}
+
+.updateDependenciesCard{
+    height: 300px !important;
+}
+
+.runScriptCard{
+    height: 300px !important;
+}
+
+.creatingPackageJsonFileCard{
+    height: 300px !important;
+}
+/*************** Other ***************/
+
+/*************** Tools for developement ***************/
+.tempBorderRed{
+    border: 2px solid red;
+}
+
+.tempBorderBlue{
+    border: 2px solid blue;
+
+}
+
+.tempBorderGreen{
+    border: 2px solid green;
+
+}
+
+.tempBorderOrange{
+    border: 2px solid orange;
+
+}
+
+.tempBorderPink{
+    border: 2px solid rgb(194, 62, 223);
+    
+}
