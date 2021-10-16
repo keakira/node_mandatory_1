@@ -1,6 +1,4 @@
-
 /*************** Navbar *****************/
-
 .nav{
     height:60px;
     margin-bottom:130px;
@@ -24,12 +22,11 @@
     text-decoration: none;
     color: #1f1e1e;
 }
+
 /*************** MainPage ***************/
-
-
 .basicInfoText{
     margin-top: 50px !important;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     font-size: 27px;
     font-weight: bold;
     color: #3d3b3b;
@@ -43,7 +40,7 @@
 }
 
 .tableElementLink{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #575353 !important;
 }
@@ -53,7 +50,6 @@
 }
 
 /*************** General **************/
-
 .subjectHeaderText{
     margin-top: 80px !important;
     margin-bottom: 70px;
@@ -119,31 +115,4 @@
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 70px;
-}
-
-
-
-/*************** Tools for developement ***************/
-.tempBorderRed{
-    border: 2px solid red;
-}
-
-.tempBorderBlue{
-    border: 2px solid blue;
-
-}
-
-.tempBorderGreen{
-    border: 2px solid green;
-
-}
-
-.tempBorderOrange{
-    border: 2px solid orange;
-
-}
-
-.tempBorderPink{
-    border: 2px solid rgb(194, 62, 223);
-    
 }
