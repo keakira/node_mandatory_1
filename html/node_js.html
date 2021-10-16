@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>Mandatory</title>
+  <title>Node.js</title>
   
   <!-- CSS -->
   <link rel="stylesheet" href="stylesheet.css">
@@ -15,13 +15,19 @@
   <!-- for bootstrap -->
   <link rel="stylesheet" href="bootstrap.min.css">
   
+  <!-- for prism CSS - syntax highlighting -->
+  <link rel="stylesheet" href="prism.css">
+
+  <!-- for prism JS - syntax highlighting -->
+  <script src="prism.js"></script>
+
 </head>
 
 
 <body>
 
     <div class="nav">
-        <a href="/" class="navLink">Tilbage</a>
+        <a href="/" class="navLink">Menu</a>
       </div>
 
       <div class="container">
@@ -41,37 +47,76 @@
 
                     Node.js interpretoren er lavet til at køre på en computer serverside 
                     for således at gøre det muligt at lave backend applicationer i JavaScript. 
-                    Node.js interpretoren er baseret på en V8 interpretor som er indbygget i Crome.<br><br>
+                    Node.js interpretoren er baseret på V8 interpretor'en som er indbygget i Crome. 
+                    Node interpreter'en tiljøjer server-relateret funktionalitet 
+                    som ikke er tilgængelig i en browser, fordi browseren skal kunne køre "untrusted"
+                    kode, som derfor skal sandboxes.<br><br>
 
-                    Node.js er en web application server som kører JavaScript 
+                    Af Node-ekskulsiv funktionalitet kan nævnes, at åbne porte eller 
+                    indlæse filer fra disk uden file-selektor dialoger.
+                    Til gengæld præsenterer V8-interpreteren et mere specialiseret miljø hvor det 
+                    kan forventes at have ting som et window og en DOM stillet til rådighed, 
+                    mens dette ikke nødvendigvis er tilfældet med Node-interpreteren, 
+                    fordi denne stiller et mere generisk miljø til rådighed<br><br>
+
+
+
+                    Det vil sige at Node.js er en web application server som kører JavaScript 
                     på samme måde som Tomcat er en server som kører Java.<br><br>
 
-                    Med Node.js følger NPM package manager.
+                    Med Node.js følger NPM package manager (svarende til Maven til Java).
                 </span>
               </div>
           </div>
 
-          <div class = "row">
-            <div class = "col cardHeader">
-              <span>
-                  Installation af Node.js
-              </span>
-            </div>
+        <div class = "row">
+          <div class = "col cardHeader">
+            <span>
+                Kør JavaScript-filer med Node.js
+            </span>
+          </div>
         </div>
-
         <div class = "row card">
           <div class = "col">
             <div class="row cardTextPlacement">
-              <span>Something something something something.....</span>
+              <span>
+                1) I terminal, navigér ind i projekt-mappen<br>
+                2) Giv javascript-filen som argument til node
+              </span>
             </div>
             <div class="row cardCodePlacement">
-              <code>console.log("Hello node") console.log("Hello node") </code>
+              <pre><code class="language-bash">node myscript.js</code></pre>
             </div>
+          </div>
+        </div>
+
+        <div class = "row">
+          <div class = "col cardHeader">
+            <span>
+              Åbn REPL med Node.js
+            </span>
+          </div>
+        </div>
+        <div class = "row card">
+          <div class = "col">
             <div class="row cardTextPlacement">
-              <span>Some text explanation here.....</span>
+              <span>
+                REPL står for Read-Evaluate-Print-Loop. 
+                Det er en måde at skrive og køre kode én linje ad gangen, 
+                og se resultatet - dvs. det er velegnet til at live-kode og
+                eksperimentere.<br><br>
+
+                1) I terminal: Kald node uden argumenter
+              </span>
             </div>
             <div class="row cardCodePlacement">
-              <code>console.log("Hello node")</code>
+              <pre><code class="language-bash">
+node
+Welcome to Node.js v14.17.0.
+Type ".help" for more information.
+> 2 + 2
+4
+              </code></pre>
             </div>
           </div>
         </div>

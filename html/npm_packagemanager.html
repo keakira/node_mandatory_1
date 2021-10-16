@@ -2,7 +2,6 @@
 <html class="no-js" lang="">
 
 <head>
-  
   <title>Mandatory</title>
   
   <!-- CSS -->
@@ -14,13 +13,18 @@
   <!-- for bootstrap -->
   <link rel="stylesheet" href="bootstrap.min.css">
   
+  <!-- for prism CSS - syntax highlighting -->
+  <link rel="stylesheet" href="prism.css">
+
+  <!-- for prism JS - syntax highlighting -->
+  <script src="prism.js"></script>
 </head>
 
 
 <body>
 
     <div class="nav">
-        <a href="/" class="navLink">Tilbage</a>
+        <a href="/" class="navLink">Menu</a>
       </div>
 
       <div class="container">
@@ -28,187 +32,246 @@
           <div class = "row subjectHeaderText">
             <div class = "col">
               <span>
-                  NPM og Package.json
+                  NPM og package.json
               </span>
             </div>
           </div>
 
+          <div class = "row">
+            <div class = "col infoTextHeader">
+              <p>
+                  NPM
+              </p>
+            </div>
+          </div>
           <div class = "row infoText">
               <div class = "col infoTextPlacement">
                 <span>
-                  NPM er en package manager som følger med node.js
+                  NPM er en package manager som følger med node.js og installeres 
+                  sammen med denne (se <a href="node_js.html">Node-siden</a>). <br><br>
 
-                  NPM og Package.json kan sammenlignes med Maven og pom.xml i java. 
-                  Det samme kan relationen imellem dem.
+                  NPM's primære funktion er at tage sig af at hente dependencies ned, 
+                  dvs. downloade libraries og frameworks, så man kan kalde disse fra egen kode. <br><br>
 
+                  Derudover kan npm bruges til at køre scripts og build tools, og starte node op
+                  med specifikke parametre. Dette kan med fordel bruges når man ønsker at kunne
+                  starte programmet i flere forskellige tilstande, for eksempel hvis man vil starte en 
+                  test-suite.
                 </span>
               </div>
           </div>
 
           <div class = "row">
-            <div class = "col cardHeader">
+            <div class = "col infoTextHeader">
               <p>
-                  Installation af NPM
+                  package.json
               </p>
-              <div class = "cardHeaderText">
-                <p>
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla 
-                  bla bla bla bla bla 
-                  bla bla bla bla bla  
-                </p>
-              </div>
-            </div>
-        </div>
-        <div class = "row card NPMInstallationCard">
-          <div class = "col">
-            <div class="row cardTextPlacement">
-              <span>Something something something something.....</span>
-            </div>
-            <div class="row cardCodePlacement">
-              <code>console.log("Hello node") console.log("Hello node") </code>
-            </div>
-            <div class="row cardTextPlacement">
-              <span>Some text explanation here.....</span>
-            </div>
-            <div class="row cardCodePlacement">
-              <code>console.log("Hello node")</code>
             </div>
           </div>
-        </div>
+          <div class = "row infoText">
+              <div class = "col infoTextPlacement">
+                <span>
+                  package.json er en fil som bruges til at fortælle NPM hvilke
+                  dependencies der skal bruges til programmet, samt hvilke versioner af disse.<br><br>
+
+                  NPM og package.json kan således sammenlignes med Maven og pom.xml i Java. 
+                  Det samme kan relationen imellem dem.
+                </span>
+              </div>
+          </div>
+
+          <div class = "row">
+            <div class = "col infoTextHeader">
+              <p>
+                  package-lock.json
+              </p>
+            </div>
+          </div>
+          <div class = "row infoText">
+              <div class = "col infoTextPlacement">
+                <span>
+                  Når dependiencies fra package.json hentes ned med NPM, så oprettes der en
+                  package-lock.json fil, som indeholder information om de specifkke versioner
+                  af hver dependency, samt disses under-dependencies. <br><br>
+
+                  Lock-filen kan ses som et supplement, til package.json filen, som er 
+                  nødvendigt fordi man således har mulighed for at vælge at skrive i 
+                  package.json filen, at programmet har lov til at gøre brug af en bredere 
+                  vifte af versioner.<br><br>
+
+                  Problemet som lock-filen løser: <br>
+                  Det er ikke muligt at gøre brug af mere end én version af en dependency 
+                  af gangen i et program. Når en dependency hentes ned, så hentes ligeledes 
+                  dennes under-dependencies ned. Hvis én af vores dependencies har en 
+                  under-dependency af en given version, men en anden af vores dependencies
+                  gør brug af samme under-dependency i en anden version, er der en konflikt,
+                  hvor begge krav ikke kan tilfredsstilles. <br>
+                  - Derfor er det værdifuldt at definere en så bred vifte af tilladte
+                  versioner af under-dependencies for en given dependency som muligt. <br><br>
+
+                  Dette sikrer stabiliteten af de specifikke versioner der bruges, hvilket er
+                  værdifuldt hvis det samme projekt skal bygge på flere computere, f.eks.
+                  ved deployment eller på hvis flere programmører samarbejder om projektet.
+                </span>
+              </div>
+          </div>
+
+          <div class = "row">
+            <div class = "col infoTextHeader">
+              <p>
+                Scripts
+              </p>
+            </div>
+          </div>
+          <div class = "row infoText">
+              <div class = "col infoTextPlacement">
+                <span>
+                  Det er muligt at indsætte navngivne bash-scripts i package.json filen, 
+                  og køre dem via NPM. Disse scripts indeholder terminal-kommandoer som
+                  man i princippet selv kunne skrive. Det smarte ved at gøre brug af scripts
+                  er at man således kan formalisere og dokumentere en eller flere "korrekte"
+                  måder at bruge programmet på. Det kan for eksempel være måder at starte 
+                  serveren op, køre et build-tool eller køre en test-suite.
+                </span>
+              </div>
+          </div>
 
         <div class = "row">
           <div class = "col cardHeader">
             <p>
-                Creating a package.json file
+                Lav en package.json fil
             </p>
-            <div class = "cardHeaderText">
-              <p>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                bla bla bla bla bla 
-                bla bla bla bla bla 
-                bla bla bla bla bla  
-              </p>
-            </div>
           </div>
       </div>
-      <div class = "row card creatingPackageJsonFileCard">
+      <div class = "row card">
         <div class = "col">
           <div class="row cardTextPlacement">
-            <span>Create a default package.json file for your application.<br>
-              <br> 1) Navigate into project folder
-              <br> 2) In console:
+            <span>Lav en package.json fil til applikationen - manuelt<br>
+              <br> 1) I projekt-mappen: Opret en tekst-fil ved navn "package.json"
+              <br> 2) I package.json filen:
             </span>
           </div>
           <div class="row cardCodePlacement">
-            <code>$ npm init --y</code>
+            <pre><code class="language-json">
+{
+  "dependencies": {
+
+  }
+}
+            </code></pre>
           </div>
+        </div>
+      </div>
+      <div class = "row card">
+        <div class = "col">
           <div class="row cardTextPlacement">
-            <span>3) (optional) Edit variable "main", in package.json file, to:</span>
+            <span>Lav en default package.json fil til applikationen - via npm<br>
+              <br> 1) I terminal: Navigér ind i projekt-mappen
+            </span>
           </div>
           <div class="row cardCodePlacement">
-            <code>"app.js"</code>
+            <code class="language-bash">$ npm init --y</code>
           </div>
         </div>
       </div>
 
-      <div class = "row">
-        <div class = "col cardHeader">
+    <div class = "row">
+      <div class = "col cardHeader">
+        <p>
+          Sæt Express som dependency i package.json filen og installer
+        </p>
+        <div class = "cardHeaderText">
           <p>
-            Sæt Express som dependency i package.json filen
+            Når dependencies fra package.json hentes og installeres oprettes 
+            der en package-lock.json fil. Hvis package-lock.json allerede eksisterer
+            vil nye dependencies samt under-dependencies blive tilføjet til lock-filen.
           </p>
-          <div class = "cardHeaderText">
-            <p>
-              bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-              bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-              bla bla bla bla bla 
-              bla bla bla bla bla 
-              bla bla bla bla bla  
-            </p>
-          </div>
         </div>
+      </div>
     </div>
-    <div class = "row card NPMInstallationCard">
+    <div class = "row card">
       <div class = "col">
         <div class="row cardTextPlacement">
           <span>
-            I terminalen:<br>
-            <br> 1) Naviger ind i project folder.
+            Indsæt express som dependency i package.json - manuelt
+            <br><br>
+             1) I package.json filen:
           </span>
         </div>
         <div class="row cardCodePlacement">
-          <code> npm install express --save</code>
+          <pre><code class="language-json">
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+          </code></pre>
+        </div>
+        <div class="row cardTextPlacement">
+          <span>
+            2) Hent nye dependencies med npm
+          </span>
+        </div>
+        <div class="row cardCodePlacement">
+          <code class="language-bash"> npm install</code>
         </div>
       </div>
     </div>
-
-        <div class = "row">
-          <div class = "col cardHeader">
-            <p>
-                Update dependencies
-            </p>
-            <div class = "cardHeaderText">
-              <p>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                bla bla bla bla bla 
-                bla bla bla bla bla 
-                bla bla bla bla bla  
-              </p>
-            </div>
-          </div>
-      </div>
-      <div class = "row card updateDependenciesCard">
-        <div class = "col">
-          <div class="row cardTextPlacement">
-            <span>Something something something something.....</span>
-          </div>
-          <div class="row cardCodePlacement">
-            <code>console.log("Hello node") console.log("Hello node") </code>
-          </div>
-          <div class="row cardTextPlacement">
-            <span>Some text explanation here.....</span>
-          </div>
-          <div class="row cardCodePlacement">
-            <code>console.log("Hello node")</code>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <div class = "row">
-        <div class = "col cardHeader">
-          <p>
-              Kør Scripts
-          </p>
-          <div class = "cardHeaderText">
-            <p>
-              bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-              bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-              bla bla bla bla bla 
-              bla bla bla bla bla 
-              bla bla bla bla bla  
-            </p>
-          </div>
-        </div>
-    </div>
-    <div class = "row card runScriptCard">
+    <div class = "row card">
       <div class = "col">
         <div class="row cardTextPlacement">
-          <span>Something something something something.....</span>
+          <span>
+            Indsæt express som dependency i package.json - via npm
+            <br><br>
+            1) I terminalen: Naviger ind i projekt-mappen
+          </span>
         </div>
         <div class="row cardCodePlacement">
-          <code>console.log("Hello node") console.log("Hello node") </code>
+          <code class="language-bash"> npm install express --save</code>
+        </div>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col cardHeader">
+        <p>
+            Kør Scripts
+        </p>
+        <div class = "cardHeaderText">
+          <p>
+            Lav og kør et script som starter serveren.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class = "row card">
+      <div class = "col">
+        <div class="row cardTextPlacement">
+          <span>
+            Indsæt express som dependency i package.json - manuelt
+            <br><br>
+             1) I package.json filen:
+          </span>
+        </div>
+        <div class="row cardCodePlacement">
+          <pre><code class="language-json">
+{
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+          </code></pre>
         </div>
         <div class="row cardTextPlacement">
-          <span>Some text explanation here.....</span>
+          <span>
+            2) I terminal: Kør scriptet med npm
+          </span>
         </div>
         <div class="row cardCodePlacement">
-          <code>console.log("Hello node")</code>
+          <code class="language-bash"> npm run start</code>
         </div>
       </div>
     </div>
