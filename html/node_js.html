@@ -32,42 +32,70 @@
 
       <div class="container">
 
-          <div class = "row subjectHeaderText">
-            <div class = "col">
+        <div class = "row subjectHeaderText">
+          <div class = "col">
+            <span>
+                Node.js
+            </span>
+          </div>
+        </div>
+
+        <div class = "row">
+          <div class = "col infoTextHeader">
+            <p>
+                Node.js
+            </p>
+          </div>
+        </div>
+        <div class = "row infoText">
+            <div class = "col infoTextPlacement">
               <span>
-                  Node.js
+                  Node.js er en server og en standalone interpretor til JavaScript.<br><br>
+
+                  Node.js interpretoren er lavet til at køre på en computer serverside 
+                  for således at gøre det muligt at lave backend applicationer i JavaScript. 
+                  Node.js interpretoren er baseret på V8 interpretor'en som er indbygget i Crome. 
+                  Node interpreter'en tiljøjer server-relateret funktionalitet 
+                  som ikke er tilgængelig i en browser, fordi browseren skal kunne køre "untrusted"
+                  kode, som derfor skal sandboxes.<br><br>
+
+                  Af Node-ekskulsiv funktionalitet kan nævnes, at åbne porte eller 
+                  indlæse filer fra disk uden file-selektor dialoger.
+                  Til gengæld præsenterer V8-interpreteren et mere specialiseret miljø hvor det 
+                  kan forventes at have ting som et window og en DOM stillet til rådighed, 
+                  mens dette ikke nødvendigvis er tilfældet med Node-interpreteren, 
+                  fordi denne stiller et mere generisk miljø til rådighed<br><br>
+
+
+
+                  Det vil sige at Node.js er en web application server som kører JavaScript 
+                  på samme måde som Tomcat er en server som kører Java.<br><br>
+
+                  Med Node.js følger NPM package manager (svarende til Maven til Java).
               </span>
             </div>
+        </div>
+        <div class = "row">
+          <div class = "col infoTextHeader">
+            <p>
+                Nodemon
+            </p>
           </div>
-
-          <div class = "row infoText">
-              <div class = "col infoTextPlacement">
-                <span>
-                    Node.js er en server og en standalone interpretor til JavaScript.<br><br>
-
-                    Node.js interpretoren er lavet til at køre på en computer serverside 
-                    for således at gøre det muligt at lave backend applicationer i JavaScript. 
-                    Node.js interpretoren er baseret på V8 interpretor'en som er indbygget i Crome. 
-                    Node interpreter'en tiljøjer server-relateret funktionalitet 
-                    som ikke er tilgængelig i en browser, fordi browseren skal kunne køre "untrusted"
-                    kode, som derfor skal sandboxes.<br><br>
-
-                    Af Node-ekskulsiv funktionalitet kan nævnes, at åbne porte eller 
-                    indlæse filer fra disk uden file-selektor dialoger.
-                    Til gengæld præsenterer V8-interpreteren et mere specialiseret miljø hvor det 
-                    kan forventes at have ting som et window og en DOM stillet til rådighed, 
-                    mens dette ikke nødvendigvis er tilfældet med Node-interpreteren, 
-                    fordi denne stiller et mere generisk miljø til rådighed<br><br>
-
-
-
-                    Det vil sige at Node.js er en web application server som kører JavaScript 
-                    på samme måde som Tomcat er en server som kører Java.<br><br>
-
-                    Med Node.js følger NPM package manager (svarende til Maven til Java).
-                </span>
-              </div>
+        </div>
+        <div class = "row infoText">
+          <div class = "col infoTextPlacement">
+            <span>
+                
+              Nodemon er et "hot-reload"-værktøj som kan installeres globalt på computeren.
+              Der er tale om et værktøj som kan bruges ved developement (ikke produktion)
+              til at køre programmet.
+              
+              Nodemon er et værktøj som køres på sammen måde som node køres.
+              Det tager sig af at køre node og automatisk genstarte den, 
+              hvis filer i projekt-mappen ændres.
+            </span>
           </div>
+      </div>
 
         <div class = "row">
           <div class = "col cardHeader">
@@ -89,6 +117,39 @@
             </div>
           </div>
         </div>
+
+        <div class = "row">
+          <div class = "col cardHeader">
+            <span>
+                Installer og brug Nodemon
+            </span>
+          </div>
+        </div>
+        <div class = "row card">
+          <div class = "col">
+            <div class="row cardTextPlacement">
+              <span>
+                Installer nodemon globalt på computeren<br>
+                1) I terminal:<br>
+              </span>
+            </div>
+            <div class="row cardCodePlacement">
+              <pre><code class="language-bash">npm install -g nodemon</code></pre>
+            </div>
+
+            <div class="row cardTextPlacement">
+              <span>
+                Start hot-reload med nodemon på projektet<br>
+                2) I terminal:<br>
+              </span>
+            </div>
+            <div class="row cardCodePlacement">
+              <pre><code class="language-bash">nodemon myscript.js</code></pre>
+            </div>
+          </div>
+        </div>
+
+        
 
         <div class = "row">
           <div class = "col cardHeader">
