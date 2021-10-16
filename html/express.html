@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>Mandatory</title>
+  <title>Express</title>
   
   <!-- CSS -->
   <link rel="stylesheet" href="stylesheet.css">
@@ -41,17 +41,8 @@
           <div class = "row infoText">
               <div class = "col infoTextPlacement">
                 <span>
-                  Express er et framework som bruges til serverside udvikling med JavaScript.
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-
+                  Express er et framework som bruges til serverside udvikling med JavaScript.<br>
+                  Express kan sammenlignes med Spring i Java.
                 </span>
               </div>
           </div>
@@ -59,137 +50,208 @@
           <div class = "row">
             <div class = "col cardHeader">
               <p>
-                  REST med Express
+                  Importer express-modulet og kald det for at få et objekt 
+                  som kan bruges til at konfigurere serveren.
               </p>
-              <div class = "cardHeaderText">
-                <p>
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                  bla bla bla bla bla 
-                  bla bla bla bla bla 
-                  bla bla bla bla bla  
-                </p>
-              </div>
-            </div>
-        </div>
-        <div class = "row card NPMInstallationCard">
-          <div class = "col">
-            <div class="row cardTextPlacement">
-              <span>Something something something something.....</span>
-            </div>
-            <div class="row cardCodePlacement">
-              <pre><code class="language-javascript">
-console.log("Hello node")
-console.log("Hello node") 
-              </code></pre>
-            </div>
-            <div class="row cardTextPlacement">
-              <span>Some text explanation here.....</span>
-            </div>
-            <div class="row cardCodePlacement">
-              <code>console.log("Hello node")</code>
             </div>
           </div>
-        </div>
+          <div class = "row card">
+            <div class = "col">
+              <div class="row cardTextPlacement">
+                <span>
+                  Importer express-modulet<br><br>
+                  1) Øverst i JavaScript filen:
+                </span>
+              </div>
+              <div class="row cardCodePlacement">
+                <pre><code class="language-javascript">
+  const express = require('express') 
+                </code></pre>
+              </div>
+              <div class="row cardTextPlacement">
+                <span>
+                  Kald express-modulet med følgende kode. Dette vil returnere et object som kan bruges til at konfigurere og starte serveren <br>
+                  2) Sæt attribut til at indeholde output fra følgende metode:
+                </span>
+              </div>
+              <div class="row cardCodePlacement">
+                <pre><code class="language-javascript">
+  const app = express()
+                </code></pre>
+              </div>
+              <div class="row cardTextPlacement">
+                <span>
+                  Konfigurer express-modul-objektet så der sættes en callback 
+                  der kaldes hvis serveren får et HTTP GET kald på en given sti<br><br>
+                  3) I JavaScript filen:
+                </span>
+              </div>
+              <div class="row cardCodePlacement">
+                <pre><code class="language-javascript">
+  app.get('/', (req, res) => {
+    res.send('html kode her')
+  })
+
+  // Eller 
+
+  app.get('/', (req, res) => {
+    res.sendFile('path til fil her')
+  })
+                </code></pre>
+              </div>
+
+              <div class="row cardTextPlacement">
+                <span>
+                  Sæt serveren til at lytte på en port<br><br>
+                  4) I JavaScript filen:
+                </span>
+              </div>
+              <div class="row cardCodePlacement">
+                <pre><code class="language-javascript">
+  const port = 3000
+
+  app.listen(port, () => {
+    console.log(`app listening at http://localhost:${port}`)
+  })
+                </code></pre>
+              </div>
+
+            </div>
+          </div>
+          
 
         <div class = "row">
           <div class = "col cardHeader">
             <p>
-                CRUD med Express
+              CRUD og REST med Express
             </p>
             <div class = "cardHeaderText">
               <p>
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-                bla bla bla bla bla 
-                bla bla bla bla bla 
-                bla bla bla bla bla  
+                REST er en arkitektur til at behandle resourcer via HTTP requests. 
+                Herunder; oprette, hente, modificere og slette (CRUD).
               </p>
             </div>
           </div>
-      </div>
-      <div class = "row card updateDependenciesCard">
-        <div class = "col">
-          <div class="row cardTextPlacement">
-            <span>Something something something something.....</span>
-          </div>
-          <div class="row cardCodePlacement">
-            <code>console.log("Hello node") console.log("Hello node") </code>
-          </div>
-          <div class="row cardTextPlacement">
-            <span>Some text explanation here.....</span>
-          </div>
-          <div class="row cardCodePlacement">
-            <code>console.log("Hello node")</code>
-          </div>
         </div>
-      </div>
+        <div class = "row card">
+          <div class = "col">
+            <div class="row cardTextPlacement">
+              <span>
+                Opsæt serveren til at fungere som REST-server.<br>
+                - Konfigurer express-modul-objektet til at forvente at modtage
+                og sende JSON.<br><br>
+                Lav array til at indeholde model-objekter 
+                som in-memory-storage alternativ til en database
+              </span>
+            </div>
+            <div class="row cardCodePlacement">
+              <pre><code class="language-javascript">
+  const express = require("express");
+  const app = express();
+  
+  app.use(express.json());
+  
+  let funFacts = [{
+      id: 1,
+      text: "Salamanders can drop their tails when they get scared"
+  }];
+              </code></pre>
+            </div>
 
-      <div class = "row">
-        <div class = "col cardHeader">
-          <p>
-              HTML med Express ????????????
-          </p>
-          <div class = "cardHeaderText">
-            <p>
-              bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-              bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-              bla bla bla bla bla 
-              bla bla bla bla bla 
-              bla bla bla bla bla  
-            </p>
+            <div class="row cardTextPlacement">
+              <span>
+                - GET -<br>
+                Registrér to callbacks til at håndtere to GET-kald: Ét der returnerer en liste over alle
+                funFacts, og ét der returnerer indholdet af en bestemt funFact med et bestemt id.
+              </span>
+            </div>
+            <div class="row cardCodePlacement">
+              <pre><code class="language-javascript">
+  app.get("/funFacts", (req, res) => {
+    res.send({ facts: funFacts });
+  });
+  
+  app.get("/funFacts/:id", (req, res) => {
+
+    /* 
+    .find() --> metode som tager en closure.
+    denne closure: Tager én parameter og returnerer en boolean.
+    Bruges til at sammenligne to værdier.
+
+    Number() --> cast string til int (eller anden number type)
+    */ 
+    const foundFact = funFacts.find(funFact => funFact.id === Number(req.params.id));
+    
+    // Trinary operator --> hvis foundFact er truthy gør den første ting, ellers den anden
+    foundFact ? res.send(foundFact) : res.sendStatus(404);
+  });
+              </code></pre>
+            </div>
+
+            <div class="row cardTextPlacement">
+              <span>
+                - POST -<br>
+                Opret en ny funFact på baggrund af den JSON-body der sendes med i requestet.<br>
+                auto_increment-variablen bruges til at sikre at der laves et nyt id hver gang.
+              </span>
+            </div>
+            <div class="row cardCodePlacement">
+              <pre><code class="language-javascript">
+  let auto_increment = 1;
+
+  app.post("/funFacts", (req, res) => {
+    const funFact = req.body;
+    funFact.id = ++auto_increment;
+    funFacts.push(funFact);
+    res.send(req.body.id);
+  });
+              </code></pre>
+            </div>
+
+            <div class="row cardTextPlacement">
+              <span>- PATCH -<br></span>
+            </div>
+            <div class="row cardCodePlacement">
+              <pre><code class="language-javascript">
+  app.patch("/funFacts/:id", (req, res) => {
+    let factToUpdate;
+    funFacts = funFacts.map(funFact => {
+        if (funFact.id === Number(req.params.id)) {
+            /* 
+            ...funFact --> 
+            Indsæt eller overskriv alle attributter på gældende objekt med attributter 
+            inklusiv værdier fra funFact.
+            */
+            factToUpdate = { ...funFact, ...req.body, id: funFact.id };
+            return factToUpdate;
+        }
+        return funFact;
+    });
+    factToUpdate ? res.send(factToUpdate): res.sendStatus(404);
+  }); 
+              </code></pre>
+            </div>
+
+            <div class="row cardTextPlacement">
+              <span>
+                - DELETE -<br>
+                Slet funFact med det givne id hvis den kan findes og returner statuskode
+              </span>
+            </div>
+            <div class="row cardCodePlacement">
+              <pre><code class="language-javascript">
+  app.delete("/funFacts/:id", (req, res) => {
+    let foundFactToDelete = false;
+    funFacts = funFacts.filter(funFact => {
+        const shouldKeep = funFact.id !== Number(req.params.id);
+        if (!shouldKeep) foundFactToDelete = true;
+        return shouldKeep;
+    });
+    foundFactToDelete ? res.sendStatus(200) : res.sendStatus(404);
+  });
+              </code></pre>
+            </div>
           </div>
         </div>
-    </div>
-    <div class = "row card runScriptCard">
-      <div class = "col">
-        <div class="row cardTextPlacement">
-          <span>Something something something something.....</span>
-        </div>
-        <div class="row cardCodePlacement">
-          <code>console.log("Hello node") console.log("Hello node") </code>
-        </div>
-        <div class="row cardTextPlacement">
-          <span>Some text explanation here.....</span>
-        </div>
-        <div class="row cardCodePlacement">
-          <code>console.log("Hello node")</code>
-        </div>
-      </div>
-    </div>
-
-    <div class = "row">
-      <div class = "col cardHeader">
-        <p>
-            Environmental Variables med Express
-        </p>
-        <div class = "cardHeaderText">
-          <p>
-            bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-            bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-            bla bla bla bla bla 
-            bla bla bla bla bla 
-            bla bla bla bla bla  
-          </p>
-        </div>
-      </div>
-  </div>
-  <div class = "row card runScriptCard">
-    <div class = "col">
-      <div class="row cardTextPlacement">
-        <span>Something something something something.....</span>
-      </div>
-      <div class="row cardCodePlacement">
-        <code>console.log("Hello node") console.log("Hello node") </code>
-      </div>
-      <div class="row cardTextPlacement">
-        <span>Some text explanation here.....</span>
-      </div>
-      <div class="row cardCodePlacement">
-        <code>console.log("Hello node")</code>
-      </div>
-    </div>
-  </div>
-
       </div>   
     </div>
